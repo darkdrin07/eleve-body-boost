@@ -1,11 +1,10 @@
 
 import React from 'react';
 import { Shield } from 'lucide-react';
-import AnimatedSection from '../AnimatedSection';
 
 const GuaranteeSection = () => {
   return (
-    <AnimatedSection className="py-12 px-5 md:px-10 lg:px-20 bg-emerald-50">
+    <div className="py-12 px-5 md:px-10 lg:px-20 bg-emerald-50">
       <div className="max-w-3xl mx-auto text-center">
         <div className="flex justify-center mb-4">
           <Shield className="w-16 h-16 text-emerald-600" />
@@ -22,7 +21,7 @@ const GuaranteeSection = () => {
           </p>
         </div>
       </div>
-    </AnimatedSection>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
+
 import React from 'react';
-import AnimatedSection from '../AnimatedSection';
 import BadgeRibbon from '../BadgeRibbon';
 import GlassCard from '../GlassCard';
 import CTAButton from '../CTAButton';
@@ -11,7 +11,7 @@ interface PricingSectionProps {
 
 const PricingSection = ({ dataOferta, onPlanClick }: PricingSectionProps) => {
   return (
-    <AnimatedSection id="pricing" className="py-16 px-5 md:px-10 lg:px-20 bg-white">
+    <div id="pricing" className="py-16 px-5 md:px-10 lg:px-20 bg-white">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl mb-12 text-center text-gray-800">
           Comece no seu ritmo:
@@ -118,7 +118,7 @@ const PricingSection = ({ dataOferta, onPlanClick }: PricingSectionProps) => {
           </div>
         </div>
       </div>
-    </AnimatedSection>
+    </div>
   );
 };
 

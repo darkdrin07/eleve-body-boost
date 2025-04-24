@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Book, Calendar, Sparkle, Headphones, Palette, ListChecks, Sparkles, Crown, Target, Zap, Heart, Shield } from 'lucide-react';
 import { formatDate } from '../utils/dateUtils';
@@ -8,7 +7,6 @@ import PricingSection from '../components/landing/PricingSection';
 import GuaranteeSection from '../components/landing/GuaranteeSection';
 import FooterSection from '../components/landing/FooterSection';
 import FAQAccordion from '../components/FAQAccordion';
-import AnimatedSection from '../components/AnimatedSection';
 import TestimonialCard from '../components/TestimonialCard';
 import ImageCarousel from '../components/ImageCarousel';
 import CTAButton from '../components/CTAButton';
@@ -165,7 +163,7 @@ const LandingPage: React.FC = () => {
       <IntroductionSection />
       
       {/* About Method Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-pink-50">
+      <div className="py-16 px-5 md:px-10 lg:px-20 bg-pink-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-sans font-bold mb-8 text-rose-500 text-center">
             Sobre o Método Eleve™
@@ -320,10 +318,10 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </AnimatedSection>
+      </div>
 
       {/* Value Anchoring Section */}
-      <AnimatedSection className="py-20 px-5 md:px-10 lg:px-20" style={{ backgroundColor: '#fef9f9' }}>
+      <div className="py-20 px-5 md:px-10 lg:px-20" style={{ backgroundColor: '#fef9f9' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
@@ -390,20 +388,20 @@ const LandingPage: React.FC = () => {
             </CTAButton>
           </div>
         </div>
-      </AnimatedSection>
+      </div>
 
       {/* Results Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-white">
+      <div className="py-16 px-5 md:px-10 lg:px-20 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800">
             Resultados Reais do Método Eleve™
           </h2>
           <ImageCarousel images={beforeAfterImages} className="max-w-4xl mx-auto" />
         </div>
-      </AnimatedSection>
+      </div>
 
       {/* Testimonials Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-purple-100">
+      <div className="py-16 px-5 md:px-10 lg:px-20 bg-purple-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl mb-10 text-center text-gray-800">
             Mulheres reais, resultados reais:
@@ -432,21 +430,21 @@ const LandingPage: React.FC = () => {
             />
           </div>
         </div>
-      </AnimatedSection>
+      </div>
 
       <PricingSection dataOferta={dataOferta} onPlanClick={handlePlanClick} />
 
       <GuaranteeSection />
 
       {/* FAQ Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-purple-50">
+      <div className="py-16 px-5 md:px-10 lg:px-20 bg-purple-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif font-bold text-2xl md:text-3xl mb-8 text-center text-gray-800">
             Perguntas Frequentes
           </h2>
           <FAQAccordion items={faqItems} className="bg-white rounded-xl p-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <FooterSection />
     </div>
