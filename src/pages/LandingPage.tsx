@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Heart, Star, Sparkles, Target, Zap, Crown, Shield, CheckCircle2, Headphones, Book, Calendar, Sparkle, Palette, ListChecks } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
@@ -608,57 +607,4 @@ const LandingPage: React.FC = () => {
           <div className="flex justify-center mb-4">
             <Shield className="w-16 h-16 text-emerald-600" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-800 mb-4">
-            Garantia Incondicional de 7 Dias
-          </h2>
-          <p className="text-lg text-emerald-700 mb-6">
-            Se você não ficar 100% satisfeita com o método, devolvemos seu dinheiro integralmente em até 7 dias após a compra. Sem perguntas, sem complicações!
-          </p>
-          <div className="bg-white rounded-lg p-6 shadow-lg">
-            <p className="text-gray-600 italic">
-              "Acreditamos tanto no poder de transformação do Método Eleve™ que oferecemos esta garantia para que você possa experimentar sem riscos."
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* FAQ Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-purple-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif font-bold text-2xl md:text-3xl mb-8 text-center text-gray-800">
-            Perguntas Frequentes
-          </h2>
-          <FAQAccordion items={faqItems} className="bg-white rounded-xl p-6" />
-        </div>
-      </AnimatedSection>
-
-      {/* Footer */}
-      <footer className="py-10 px-5 md:px-10 bg-gray-100 text-gray-700">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between mb-8">
-            <div className="mb-6 md:mb-0">
-              <h3 className="font-serif font-bold text-lg mb-3">Eleve™</h3>
-              <p className="text-sm">Método de autoestima e autocuidado feminino</p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Contato</h4>
-              <p className="text-sm mb-1">Suporte: suporte@eleve.com.br</p>
-              <p className="text-sm">WhatsApp: (11) 99999-9999</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-6">
-            <div className="text-sm mb-4 md:mb-0">
-              <a href="#" className="mr-4 hover:text-rose-500">Termos de uso</a>
-              <a href="#" className="hover:text-rose-500">Política de privacidade</a>
-            </div>
-            <div className="text-sm text-gray-600">
-              Copyright © 2025 – Projeto Eleve™
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default LandingPage;
+          <h2 className="text-2xl md:text-3xl font-bold text-
