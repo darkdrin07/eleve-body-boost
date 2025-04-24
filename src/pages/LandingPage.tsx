@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Book, Calendar, Sparkle, Headphones, Palette, ListChecks, Sparkles, Crown, Target, Zap, Heart, Shield } from 'lucide-react';
 import { formatDate } from '../utils/dateUtils';
 import HeroSection from '../components/landing/HeroSection';
 import IntroductionSection from '../components/landing/IntroductionSection';
@@ -9,6 +11,9 @@ import FAQAccordion from '../components/FAQAccordion';
 import AnimatedSection from '../components/AnimatedSection';
 import TestimonialCard from '../components/TestimonialCard';
 import ImageCarousel from '../components/ImageCarousel';
+import CTAButton from '../components/CTAButton';
+import GlassCard from '../components/GlassCard';
+import BadgeRibbon from '../components/BadgeRibbon';
 
 const LandingPage: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -429,7 +434,6 @@ const LandingPage: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* Pricing Section */}
       <PricingSection dataOferta={dataOferta} onPlanClick={handlePlanClick} />
 
       <GuaranteeSection />
