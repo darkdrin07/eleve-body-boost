@@ -1,8 +1,13 @@
 
+import React from 'react';
 import LandingPage from "./LandingPage";
 
 const Index = () => {
-  return <LandingPage />;
+  return (
+    <div className="w-full min-h-screen">
+      <LandingPage />
+    </div>
+  );
 };
 
 export default Index;
