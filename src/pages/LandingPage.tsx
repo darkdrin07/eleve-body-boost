@@ -1,12 +1,13 @@
 import React from 'react';
-import { Heart, Star, Sparkles, Target, Zap, Crown, Shield, CheckCircle2, Headphones, Book, Calendar, Sparkle, Palette, ListChecks } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import CTAButton from '../components/CTAButton';
-import GlassCard from '../components/GlassCard';
-import TestimonialCard from '../components/TestimonialCard';
-import FAQAccordion from '../components/FAQAccordion';
-import BadgeRibbon from '../components/BadgeRibbon';
 import { formatDate } from '../utils/dateUtils';
+import HeroSection from '../components/landing/HeroSection';
+import IntroductionSection from '../components/landing/IntroductionSection';
+import PricingSection from '../components/landing/PricingSection';
+import GuaranteeSection from '../components/landing/GuaranteeSection';
+import FooterSection from '../components/landing/FooterSection';
+import FAQAccordion from '../components/FAQAccordion';
+import AnimatedSection from '../components/AnimatedSection';
+import TestimonialCard from '../components/TestimonialCard';
 import ImageCarousel from '../components/ImageCarousel';
 
 const LandingPage: React.FC = () => {
@@ -155,72 +156,9 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative pt-16 pb-16 px-5 md:px-9 min-h-[70vh] flex flex-col justify-center items-center bg-black overflow-hidden">
-        <div className="relative z-10 max-w-3xl w-full mx-auto flex flex-col items-center">
-          <div className="flex justify-center items-center mb-2 gap-3">
-            <h2 className="font-serif font-bold text-xl md:text-2xl text-pink-200">
-              Eleve
-              <span className="mx-1 text-purple-200">™: Despertar do Peitoral</span>
-            </h2>
-            <Heart className="ml-2 text-rose-400" />
-          </div>
-
-          <h1 className="font-sans font-extrabold uppercase text-2xl md:text-4xl lg:text-5xl tracking-wide text-white mb-3 text-center leading-tight">
-            <span>
-              <span className="text-rose-500 font-extrabold">
-                Recupere a firmeza natural
-              </span>
-              {" "}sua postura e sua confiança em 21 dias
-            </span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-gray-200 mb-4 max-w-2xl mx-auto font-sans text-center">
-            Método feminino, sem academia, sem cirurgias, resultados reais para o seu alto — com leveza.
-          </p>
-
-          <div className="w-full flex justify-center mb-8">
-            <img 
-              src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg"
-              alt="Método Eleve"
-              className="rounded-xl w-full max-w-[600px] h-auto object-cover shadow-lg"
-            />
-          </div>
-
-          <div className="my-2 w-full flex flex-col items-center">
-            <CTAButton
-              size="lg"
-              variant="primary"
-              className="uppercase bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-500 hover:from-purple-800 hover:to-pink-600 text-white border-none font-bold text-lg px-10 py-3 shadow-xl rounded-full transition-all"
-              onClick={() => scrollToSection("muscle-info")}
-            >
-              Descubra o segredo da transformação!
-            </CTAButton>
-          </div>
-
-          <div className="mt-5 flex justify-center">
-            <img
-              src="https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=300"
-              alt="Compra Segura, Satisfação Garantida, Privacidade Protegida"
-              className="max-h-12 w-auto"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction Section */}
-      <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-purple-100">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl mb-6 text-gray-800">
-            Sabe quando evita abraços apertados ou usar uma blusa mais soltinha porque sente que seu seio não está mais no lugar? 
-          </h2>
-          <p className="text-lg text-gray-700 md:text-xl leading-relaxed">
-            O desconforto de vestir um sutiã e ver o alto não preencher mais como antes, de não se sentir "segura" nas fotos ou encontros, faz parte da rotina de muitas mulheres — e não tem nada a ver com vaidade. É sobre identificação. E é possível mudar isso com respeito ao seu corpo!
-          </p>
-        </div>
-      </AnimatedSection>
-
+      <HeroSection onScrollToSection={scrollToSection} />
+      <IntroductionSection />
+      
       {/* About Method Section */}
       <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-pink-50">
         <div className="max-w-4xl mx-auto">
@@ -492,134 +430,9 @@ const LandingPage: React.FC = () => {
       </AnimatedSection>
 
       {/* Pricing Section */}
-      <AnimatedSection id="pricing" className="py-16 px-5 md:px-10 lg:px-20 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl mb-12 text-center text-gray-800">
-            Comece no seu ritmo:
-          </h2>
-          <div className="flex flex-col md:flex-row gap-8 mb-8">
-            {/* Premium Plan */}
-            <div className="relative md:w-1/2">
-              <BadgeRibbon text="PLANO MAIS VENDIDO" />
-              <GlassCard className="border-2 border-rose-500 bg-gradient-to-tr from-pink-200 via-purple-100 to-white shadow-lg pt-8">
-                <img
-                  src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg"
-                  alt="Eleve Premium"
-                  className="w-full h-48 object-cover rounded-t-xl mb-6"
-                />
-                <div className="text-center mb-4 bg-red-600 py-3 px-4">
-                  <p className="text-white font-bold">
-                    Esta promoção só é válida até o dia {dataOferta}
-                  </p>
-                </div>
-                <div className="text-center mb-6">
-                  <h3 className="font-serif font-bold text-2xl mb-2 text-rose-500">Eleve Premium™</h3>
-                  <div className="text-3xl font-bold text-rose-500 mb-4">R$19,90</div>
-                </div>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-emerald-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Método em PDF</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-emerald-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Cronograma de 21 dias</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-emerald-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Acesso vitalício</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-rose-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">🎁</div>
-                    <p>Diário da Autoimagem</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-rose-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">🎁</div>
-                    <p>Checklist de Rotina</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-rose-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">🎁</div>
-                    <p>Audioguia da Confiança</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-rose-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">🎁</div>
-                    <p>Mini Guia Estético</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-rose-500 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">🎁</div>
-                    <p>Acesso ao grupo de suporte no Telegram</p>
-                  </div>
-                </div>
-                <CTAButton
-                  fullWidth
-                  size="lg"
-                  className="bg-rose-500 hover:bg-rose-600 text-white font-bold shadow-lg text-lg border-none rounded-lg"
-                  onClick={handlePlanClick}
-                >
-                  Quero a Experiência Completa
-                </CTAButton>
-              </GlassCard>
-            </div>
+      <PricingSection dataOferta={dataOferta} onPlanClick={handlePlanClick} />
 
-            {/* Basic Plan */}
-            <div className="relative md:w-1/2">
-              <GlassCard className="bg-gray-100 border border-gray-300 shadow-sm">
-                <img
-                  src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg"
-                  alt="Eleve Essencial"
-                  className="w-full h-48 object-cover rounded-t-xl mb-6"
-                />
-                <div className="text-center mb-6">
-                  <h3 className="font-serif font-bold text-2xl mb-2 text-gray-700">Eleve Essencial™</h3>
-                  <div className="text-3xl font-bold text-gray-500 mb-4">R$10</div>
-                </div>
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-gray-400 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Método em PDF</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-gray-400 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Cronograma de 21 dias</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-gray-400 text-white flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</div>
-                    <p>Acesso vitalício</p>
-                  </div>
-                </div>
-                <CTAButton
-                  fullWidth
-                  variant="outline"
-                  className="bg-gray-200 text-gray-600 border-gray-400 hover:bg-gray-300 font-medium rounded-lg"
-                  onClick={handlePlanClick}
-                >
-                  Quero Começar Agora
-                </CTAButton>
-              </GlassCard>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Guarantee Section */}
-      <AnimatedSection className="py-12 px-5 md:px-10 lg:px-20 bg-emerald-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex justify-center mb-4">
-            <Shield className="w-16 h-16 text-emerald-600" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-800 mb-4">
-            Garantia Incondicional de 7 Dias
-          </h2>
-          <p className="text-lg text-emerald-700 mb-6">
-            Se você não ficar 100% satisfeita com o método, devolvemos seu dinheiro integralmente em até 7 dias após a compra. Sem perguntas, sem complicações!
-          </p>
-          <div className="bg-white rounded-lg p-6 shadow-lg">
-            <p className="text-gray-600 italic">
-              "Acreditamos tanto no poder de transformação do Método Eleve™ que oferecemos esta garantia para que você possa experimentar sem riscos."
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
+      <GuaranteeSection />
 
       {/* FAQ Section */}
       <AnimatedSection className="py-16 px-5 md:px-10 lg:px-20 bg-purple-50">
@@ -631,31 +444,7 @@ const LandingPage: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* Footer */}
-      <footer className="py-10 px-5 md:px-10 bg-gray-100 text-gray-700">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between mb-8">
-            <div className="mb-6 md:mb-0">
-              <h3 className="font-serif font-bold text-lg mb-3">Eleve™</h3>
-              <p className="text-sm">Método de autoestima e autocuidado feminino</p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Contato</h4>
-              <p className="text-sm mb-1">Suporte: suporte@eleve.com.br</p>
-              <p className="text-sm">WhatsApp: (11) 99999-9999</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-6">
-            <div className="text-sm mb-4 md:mb-0">
-              <a href="#" className="mr-4 hover:text-rose-500">Termos de uso</a>
-              <a href="#" className="hover:text-rose-500">Política de privacidade</a>
-            </div>
-            <div className="text-sm text-gray-600">
-              Copyright © 2025 – Projeto Eleve™
-            </div>
-          </div>
-        </div>
-      </footer>
+      <FooterSection />
     </div>
   );
 };
